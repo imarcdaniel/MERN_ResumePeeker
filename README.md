@@ -15,7 +15,12 @@
 ![screenshot5]()
 
 ### Technologies Used
-- HTML/CSS, MongoDB/Mongoose, Express, React, Node, Amazon S3
+- HTML/CSS
+- MongoDB/Mongoose
+- Express
+- React
+- Node
+- Amazon S3
 
 ### Getting Started 
 
