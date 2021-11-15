@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 // Add the Route named import
-import { Route, Switch, Redirect } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from './pages/AuthPage/AuthPage'
 import IndexPage from './pages/IndexPage/IndexPage';
+import UploadPage from './pages/UploadPage/UploadPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import LandingPage from './pages/LandingPage/LandingPage';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
 
@@ -33,16 +37,25 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+          <nav>
+            <Link to='/'>Resumates</Link>
+            <Link to='/LandingPage'>Home</Link>
+            <Link to='/Upload'>Upload</Link>
+            <Link to='/Profile'>My Resumes</Link>
+          </nav>
+       <Routes>
+          <Route path='/LandingPage' element={<LandingPage />}/>
+          <Route path='/Upload' element={<UploadPage />}/>
+          <Route path='/Profile' element={<ProfilePage />} />
+        </Routes>
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}
         { this.state.user ? 
-          <Switch>
-            <Route path='/index' render={(props) => (
-              <IndexPage {...props}/>
-            )}/>
-            <Redirect to="/index" />
-          </Switch>
+          <Routes>
+            <Route path='/index' element={<IndexPage />} />
+            <Navigate to="/index" />
+          </Routes>
           :
           <AuthPage setUserInState={this.setUserInState}/>
         }
