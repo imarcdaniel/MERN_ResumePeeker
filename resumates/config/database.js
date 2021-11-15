@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.DATABASE_URL || "mongodb://localhost:27017/")
+// {
 //   useNewUrlParser: true,
 //   useCreateIndex: true,
 //   useUnifiedTopology: true,
 //   useFindAndModify: false
-});
+// });
 
 const db = mongoose.connection;
 

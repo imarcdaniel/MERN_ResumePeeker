@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import AuthPage from './pages/AuthPage/AuthPage'
 import IndexPage from './pages/IndexPage/IndexPage';
+import FileUpload from './components/FileUpload/FileUpload';
 
 class App extends Component {
 
@@ -36,16 +37,15 @@ class App extends Component {
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}
-        { this.state.user ? 
+        {this.state.user ? (
           <Switch>
-            <Route path='/index' render={(props) => (
-              <IndexPage {...props}/>
-            )}/>
+            <Route path="/index" render={(props) => <IndexPage {...props} />} />
             <Redirect to="/index" />
           </Switch>
-          :
-          <AuthPage setUserInState={this.setUserInState}/>
-        }
+        ) : (
+          <AuthPage setUserInState={this.setUserInState} />
+        )}
+        <FileUpload />
       </main>
     );
 
