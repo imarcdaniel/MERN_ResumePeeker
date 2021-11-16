@@ -1,0 +1,28 @@
+.Intro {
+    padding-top: 100px;
+}
+
+#Button {
+    background-color: #1a73db;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 242px;
+    height: 37px;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}

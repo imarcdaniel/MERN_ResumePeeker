@@ -1,0 +1,31 @@
+.Intro {
+    padding-top: 100px;
+}
+
+.Box {
+    margin: auto;
+}
+
+h1 {
+    font-size: 24px;
+    color: #0049A9;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #696969;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #0049A9;
+}
