@@ -10,6 +10,7 @@ import Resume from './components/Resume/Resume';
 import UploadPage from './pages/UploadPage/UploadPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import LandingPage from './pages/LandingPage/LandingPage';
+import FileUpload from "./components/FileUpload/FileUpload";
 import { Link } from 'react-router-dom'
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
 }
 
   componentDidMount() {
-
+    
     let token = localStorage.getItem('token')
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1])); // decode token
@@ -50,24 +51,25 @@ class App extends Component {
     return (
       <main className="App">
         <Navbar />
+
         <Routes>
-          <Route path='/index' element={<IndexPage />}/>
-          <Route path='/LandingPage' element={<LandingPage />}/>
-          <Route path='/Upload' element={<UploadPage />}/>
-          <Route path='/Profile' element={<ProfilePage />} />
+          <Route path="/index" element={<IndexPage />} />
+          <Route path="/LandingPage" element={<LandingPage />} />
+          <Route path="/Upload" element={<UploadPage />} />
+          <Route path="/Profile" element={<ProfilePage />} />
         </Routes>
+        <FileUpload />
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}
-        { this.state.user ? 
+        {this.state.user ? (
           <Routes>
-            <Route path='/index' element={<IndexPage />} />
+            <Route path="/index" element={<IndexPage />} />
             <Navigate to="/index" />
           </Routes>
-          :
-          <AuthPage setUserInState={this.setUserInState}/>
-  }
-
+        ) : (
+          <AuthPage setUserInState={this.setUserInState} />
+        )}
       </main>
     );
 
