@@ -22,6 +22,9 @@ class App extends Component {
     this.setState({ user: incomingUserData})
   }
 
+this.getPosts()
+}
+
   componentDidMount() {
     let token = localStorage.getItem('token')
     if (token) {
