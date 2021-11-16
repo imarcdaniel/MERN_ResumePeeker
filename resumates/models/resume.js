@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const resumeSchema = new mongoose.Schema({
+const resumeSchema = new Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    jobTitle: {type: String},
-    experience: {type: String}, 
+    title: {type: String},
+    level: {type: String}, 
+    company: {type: String}
 }, {
     timestamps: true
 })

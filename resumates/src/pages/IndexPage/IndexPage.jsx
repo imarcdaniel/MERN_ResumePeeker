@@ -10,6 +10,14 @@ class IndexPage extends React.Component {
       resumes: []
   }
 
+  getResumes = async () => {
+    await fetch("/api/resumes").then((res) => res.json()).then(data => this.setState({resumes: data}))
+  }
+
+  componentDidMount() {
+    this.getResumes()
+  }
+
   render() {
     return (
       <main className="IndexPage">

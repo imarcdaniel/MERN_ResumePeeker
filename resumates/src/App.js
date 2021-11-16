@@ -15,11 +15,6 @@ import { Link } from 'react-router-dom'
 class App extends Component {
   state = {
     user: null,
-    resumes: []
-  }
-
-  getResumes = async () => {
-    await fetch("/api/resumes").then((res) => res.json()).then(data => this.setState({resumes: data}))
   }
 
   // a method to update user
@@ -28,11 +23,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-      this.getPosts()
-}
-
-  componentDidMount() {
-
     let token = localStorage.getItem('token')
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1])); // decode token
@@ -67,7 +57,6 @@ class App extends Component {
           :
           <AuthPage setUserInState={this.setUserInState}/>
   }
-
       </main>
     );
 

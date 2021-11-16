@@ -19,18 +19,17 @@ export default class UploadForm extends Component {
   render() {
     return(
       <div>
-        <textarea 
+        <br/>
+        <label 
+          htmlFor="contained-button-file"
           name="content"
           onChange={this.handleChange}
-          value={this.state.content}></textarea>
-        <br/>
-        <label htmlFor="contained-button-file">
+          value={this.state.content}>
         <Input accept="image/*" id="contained-button-file" multiple type="file" />
-        <Button variant="contained" component="span">
+        <Button variant="contained" component="span" onClick={this.handleSubmit}>
         Upload
         </Button>
-</label>
-        <button onClick={this.handleSubmit}>Upload</button>
+        </label>
       </div>
     )
   }

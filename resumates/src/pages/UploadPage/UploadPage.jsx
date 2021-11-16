@@ -7,7 +7,7 @@ export default class UploadPage extends Component {
         return (
             <div className="Intro">
                 <h1>Upload Page</h1>
-
+                <UploadForm />
             </div>
         )
     }
