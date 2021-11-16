@@ -54,9 +54,9 @@ class App extends Component {
             <Route path='/index' element={<IndexPage />} />
             <Navigate to="/index" />
           </Routes>
-          :
-          <AuthPage setUserInState={this.setUserInState}/>
-  }
+        ) : (
+          <AuthPage setUserInState={this.setUserInState} />
+        )}
       </main>
     );
 
