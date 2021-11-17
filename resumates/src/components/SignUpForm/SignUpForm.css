@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+  }
+    
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  label > input {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+  }
+ 
+  button {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0 0 auto;
+    padding: 0.4rem;
+    background-color: #0077b5;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 100%
+  }
+    
+  button:hover {
+    color: white;
+    background-color: #737495;
+  }
+  
