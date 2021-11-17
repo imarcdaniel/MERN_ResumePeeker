@@ -38,12 +38,86 @@ class App extends Component {
   }
 
   render() {
+     let resumeItems = [
+       [
+         "Project Manager",
+         "Junior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Develloper",
+         "Junior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Big Data",
+         "Senior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Big Data",
+         "Senior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Systems Analysis",
+         "Mid",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Big Data",
+         "Senior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Systems Analysis",
+         "Mid",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Project Manager",
+         "Junior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Project Manager",
+         "Junior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Develloper",
+         "Junior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Big Data",
+         "Senior",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+       [
+         "Systems Analysis",
+         "Mid",
+         "Company",
+         "https://d.novoresume.com/images/doc/functional-resume-template.png",
+       ],
+     ];
     return (
       <main className="App">
         <Navbar />
 
         <Routes>
-          <Route path="/index" element={<IndexPage />} />
+          <Route path="/index" element={<Resume resumeItems={resumeItems} />} />
           <Route path="/LandingPage" element={<LandingPage />} />
           <Route path="/Upload" element={<UploadPage />} />
           <Route path="/Profile" element={<ProfilePage />} />

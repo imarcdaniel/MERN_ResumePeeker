@@ -1,0 +1,28 @@
+.resume {
+  margin-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-evenly;
+}
+img {
+  margin: 5px;
+  border: solid black;
+  padding: 5px;
+}
+
+section {
+  margin-top: 90px;
+}
+
+/* section>div {
+  background: #aaa;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section>div>div {
+  flex-grow: 1;
+  width: 33%;
+  height: 100px;
+} */
