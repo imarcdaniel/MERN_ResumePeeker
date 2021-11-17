@@ -7,7 +7,7 @@ export default class UploadPage extends Component {
     render() {
         return (
             <div className="Intro">
-                <h1>Upload a new resume</h1>
+                <h1 className='UpHeader'>Upload a new resume</h1>
                 <p>Complete this step to gain access to our database</p>
                 <FileUpload />
                 <UploadForm />

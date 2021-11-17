@@ -17,9 +17,9 @@ h1 {
 p {
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
-    color: #696969;
+    color: #d4dad2;
 }
 
 h3 {
@@ -29,3 +29,8 @@ h3 {
     line-height: 21px;
     color: #0049A9;
 }
+
+.UpHeader {
+    color: white;
+}
+

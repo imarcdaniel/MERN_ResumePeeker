@@ -6,6 +6,7 @@ import upload from '../../images/Home/cloud_upload.png';
 import search from '../../images/Home/search.png';
 import download from '../../images/Home/Vector.png';
 import share from '../../images/Home/Group 40.png';
+import { Link } from 'react-router-dom'
 
 class LandingPage extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class LandingPage extends React.Component {
         <p className="p">Already have an account? Log in</p>
         <h2 className="Header2">Find thousands of resumes</h2>
         <p className="p">Uploaded by industry professionals</p>
-        <Button id='Button' variant="contained">View Resumes</Button>
+        <Button id='Button' variant="contained"><Link id='link' className='link' to='/index'>View Resumes</Link></Button>
         <h2 className="Header2">How it Works</h2>
         <div>
           <img src={upload} alt="Upload Resumes" />
