@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.DATABASE_URL || "mongodb://localhost:27017/test2") 
+console.log(process.env.DATABASE_URL) 
+mongoose.connect(process.env.DATABASE_URL)
+
 // {
 //   useNewUrlParser: true,
 //   useCreateIndex: true,

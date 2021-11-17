@@ -14,16 +14,16 @@ export default class FileUpload extends Component {
     images: []
   }
 
-  componentDidMount() {
-    fetch("api/images/get")
-      .then(res => {
-        if (res.ok) {
-          return this.setState({ loading: false })  
-        }
-        console.log("Something went wrong on  componentDidMount"); 
+  // componentDidMount() {
+  //   // fetch("api/images/get")
+  //   //   .then(res => {
+  //   //     if (res.ok) {
+  //   //       return this.setState({ loading: false })  
+  //   //     }
+  //   //     console.log("Something went wrong on  componentDidMount"); 
         
-      })
-  }
+  //   //   })
+  // }
 
 
 

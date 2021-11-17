@@ -28,6 +28,13 @@ class App extends Component {
     this.setState({ user: incomingUserData})
   }
 
+  handleLogout = () => {
+    let token = localStorage.getItem('token')
+    this.setState({ user: null })
+    localStorage.removeItem('token');
+    token = null;
+  }
+
   componentDidMount() {
       this.getPosts()
 }
@@ -50,14 +57,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Navbar />
-
-        <Routes>
-          <Route path="/index" element={<IndexPage />} />
-          <Route path="/LandingPage" element={<LandingPage />} />
-          <Route path="/Upload" element={<UploadPage />} />
-          <Route path="/Profile" element={<ProfilePage />} />
-        </Routes>
+        <Navbar handleLogout={this.handleLogout}/>
         <FileUpload />
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
@@ -65,6 +65,9 @@ class App extends Component {
         {this.state.user ? (
           <Routes>
             <Route path="/index" element={<IndexPage />} />
+            <Route path="/LandingPage" element={<LandingPage />} />
+            <Route path="/Upload" element={<UploadPage />} />
+            <Route path="/Profile" element={<ProfilePage />} />
             <Navigate to="/index" />
           </Routes>
         ) : (

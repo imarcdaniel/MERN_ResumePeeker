@@ -14,6 +14,7 @@ class IndexPage extends React.Component {
     return (
       <main className="IndexPage">
         <h1>You hit the Index page, You are Logged In</h1>
+        
 
         {this.state.resumes.length ? 
         this.state.resumes.map(p => (

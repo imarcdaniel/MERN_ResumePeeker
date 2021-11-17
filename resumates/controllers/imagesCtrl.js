@@ -11,11 +11,11 @@ const upload = multer({ dest: "uploads/" });
 const { uploadFile, getFileStream } = require("./s3");
 
 function download(req, res) {
-  console.log(req.params);
-  const key = req.params.key;
-  const readStream = getFileStream(key);
+  // console.log(req.params);
+  // const key = req.params.key;
+  // const readStream = getFileStream(key);
 
-  readStream.pipe(res);
+  // readStream.pipe(res);
 }
 
 async function uploadimage(req, res) {

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Button } from "@material-ui/core"; 
 import { Input } from "@material-ui/core"; 
 

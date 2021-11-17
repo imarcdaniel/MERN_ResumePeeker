@@ -4,7 +4,7 @@ import './Navbar.css'
 import { AppBar, Toolbar, IconButton } from "@material-ui/core"; 
 // import { MenuIcon } from '@material-ui/icons';
 
-function Navbar() {
+function Navbar(props) {
     return (
     <div>
     <AppBar id="AppBar">
@@ -23,6 +23,7 @@ function Navbar() {
           >
             {/* <MenuIcon /> */}
           </IconButton>
+          <button onClick={() => props.handleLogout()}>Logout</button>
           </nav>
         </Toolbar>
     </AppBar>

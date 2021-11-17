@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 export default function Resume(props) {
     return(
         <div className="resume">
