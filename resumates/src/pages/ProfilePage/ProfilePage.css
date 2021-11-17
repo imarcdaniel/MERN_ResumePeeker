@@ -1,3 +1,44 @@
 .ProfilePage {
     padding-top: 100px;
 }
+
+.ProfHeader {
+    color: white; 
+    font-size: 24px;    
+    text-align: start;
+}
+
+#ProfLink {
+   text-align: end;
+   color: white;  
+   font-size: 16px;
+   font-weight: bold;
+}
+
+.Resumes, .BookM {
+    border-bottom: 0.01em solid #132f4c;
+}
+
+.BookM {
+    padding-left: 15px;
+}
+
+.some-page-wrapper {
+  margin: 15px;  
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  justify-content: center; 
+  align-content: flex-end;
+}
