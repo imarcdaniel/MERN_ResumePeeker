@@ -37,10 +37,17 @@ class App extends Component {
     }
   }
 
+  handleLogout = () => {
+    let token = localStorage.getItem('token')
+    this.setState({ user: null })
+    localStorage.removeItem('token');
+    token = null;
+  }
+
   render() {
     return (
       <main className="App">
-        <Navbar />
+        <Navbar handleLogout={this.handleLogout}/>
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}

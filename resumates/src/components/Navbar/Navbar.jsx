@@ -4,7 +4,7 @@ import './Navbar.css'
 import { AppBar, Toolbar, IconButton, Menu, MenuItem  } from "@material-ui/core"; 
 import MenuIcon from "@material-ui/icons/Menu";
 
-function Navbar() {
+function Navbar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -50,6 +50,7 @@ function Navbar() {
                 <MenuItem onClick={handleClose}><Link to='/Profile'>My Resumes</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to='/LandingPage'>Home</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to='/Upload'>Upload</Link></MenuItem>
+                <MenuItem onClick={() => props.handleLogout()}><Link to='/LandingPage'>Logout</Link></MenuItem>
               </Menu>
                 <Link id='link' className='link' to='/index'>Resumates</Link>
           </nav>
