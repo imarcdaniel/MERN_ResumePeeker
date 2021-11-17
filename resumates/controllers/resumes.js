@@ -2,6 +2,7 @@ const Resume = require('../models/resume');
 
 module.exports = {
     create,
+    index,
     show,
     update,
     delete: deleteOneResume,
@@ -10,13 +11,22 @@ module.exports = {
 async function create(req, res) {
   try {
     await Resume.create({
-        jobTitle: req.body.jobTitle,
-        experience: req.body.experience,
+        title: req.body.title,
+        level: req.body.level,
     })
-    res.status(200).json('Upload Resume Form added to DB!')
+    res.status(200).json('Upload Resume Form to DB!')
  } catch(err) {
     res.json(err);
  }
+}
+
+async function index(req, res) {
+  try {
+    let resumes = await Resume.find()
+    res.status(200).json(resumes)      
+  } catch(err) {
+    res.status(400).json(err);
+  }
 }
 
 async function show (req, res) {

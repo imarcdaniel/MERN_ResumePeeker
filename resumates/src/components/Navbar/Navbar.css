@@ -1,3 +1,13 @@
 #AppBar {
-    background-color: #0073DB;
+    background-color: #081b2f;
+    border-bottom: 0.01em solid #132f4c;
+}
+
+.link, a:link, a:visited, a:hover, a:active {
+    color: #122d49;
+    text-decoration: none;
+}
+
+#link {
+    color: #3293ef;
 }
