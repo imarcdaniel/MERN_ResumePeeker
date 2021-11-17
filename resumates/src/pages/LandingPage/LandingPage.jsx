@@ -16,34 +16,36 @@ class LandingPage extends React.Component {
     return (
         <div>
         <section className="Intro"> 
-        <h1>Find 1000+ resumes to inspire yours</h1>
-        <img src={img} alt="Resume" />
-        <h2>Find thousands of resumes</h2>
-        <p>Uploaded by industry professionals</p>
+        <h1 className="Header">Find 1000+ <span> resumes </span> <br/> to inspire yours</h1>
+        {/* <img src={img} alt="Resume" /> */}
+        <Button id='Button' variant="contained">Sign Up</Button>
+        <p className="p">Already have an account? Log in</p>
+        <h2 className="Header2">Find thousands of resumes</h2>
+        <p className="p">Uploaded by industry professionals</p>
         <Button id='Button' variant="contained">View Resumes</Button>
-        <h2>How it Works</h2>
+        <h2 className="Header2">How it Works</h2>
         <div>
           <img src={upload} alt="Upload Resumes" />
-          <h3>Upload</h3>
-          <p>...your resume annonymously to gain access 
+          <h3 className="Header3">Upload</h3>
+          <p className="p">...your resume annonymously to gain access 
             to our database</p>
         </div>
         <div>
           <img src={search} alt="Search Resume's" />
-          <h3>Search</h3>
-          <p>...our database for resumes based on specific critera</p>
+          <h3 className="Header3">Search</h3>
+          <p className="p">...our database for resumes based on specific critera</p>
         </div>
         <div>
           <img src={download} alt="Download Resume's" />
-          <h3>Download</h3>
-          <p>... resumes you like for future use</p>
+          <h3 className="Header3">Download</h3>
+          <p className="p">... resumes you like for future use</p>
         </div>
         <div>
           <img src={share} alt="Share Resume's" />
-          <h3>Share & Receive Feedback</h3>
-          <p>...with other industry industry professionals</p>
+          <h3 className="Header3">Share & Receive Feedback</h3>
+          <p className="p">...with other industry industry professionals</p>
         </div>
-        <Button id='Button' variant="contained">Get Started</Button>
+        <Button id='LastButton' variant="contained">Get Started</Button>
       </section>
       </div>
     );

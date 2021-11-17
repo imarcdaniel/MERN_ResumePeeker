@@ -41,13 +41,6 @@ class App extends Component {
     return (
       <main className="App">
         <Navbar />
-
-        <Routes>
-          <Route path="/index" element={<IndexPage />} />
-          <Route path="/LandingPage" element={<LandingPage />} />
-          <Route path="/Upload" element={<UploadPage />} />
-          <Route path="/Profile" element={<ProfilePage />} />
-        </Routes>
         {/* this ternary operator asks: is there a user in state? */}
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}
@@ -55,6 +48,9 @@ class App extends Component {
           <Routes>
             <Route path="/index" element={<IndexPage />} />
             <Navigate to="/index" />
+            <Route path="/LandingPage" element={<LandingPage />} />
+            <Route path="/Upload" element={<UploadPage />} />
+            <Route path="/Profile" element={<ProfilePage />} />
           </Routes>
         ) : (
           <AuthPage setUserInState={this.setUserInState} />

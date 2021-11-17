@@ -5,7 +5,6 @@ const resumeSchema = new Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     title: {type: String},
     level: {type: String}, 
-    company: {type: String}
 }, {
     timestamps: true
 })
