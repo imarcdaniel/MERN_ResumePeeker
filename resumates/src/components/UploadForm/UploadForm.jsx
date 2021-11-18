@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { InputLabel, MenuItem, FormControl, Select, Box } from "@material-ui/core"; 
+import { Button } from "@material-ui/core"; 
 
 export default class UploadForm extends Component {
   state = {
     title: "",
     level: "",
+    user: null
   };
+
+  setUserInState = (incomingUserData) => {
+    this.setState({ user: incomingUserData})
+  }
 
   getResumes = async () => {
     await fetch("/api/resumes").then((res) => res.json()).then(data => this.setState({resumes: data}))
@@ -17,17 +23,23 @@ handleChange = (e) => {
 }
 
 handleSubmit = async () => {
+    const formData = new FormData();
+  formData.append("title", this.state.title);
+  formData.append("level", this.state.level);
+  formData.append("file", this.state.file);
+  formData.append("user", this.state.user);
+  
+  let jwt = localStorage.getItem('token')
   let body = { 
     title: this.state.title, 
     level: this.state.level, 
-    company: this.state.company 
   }
   let options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(body)
+   method: "POST",
+    // headers: {
+    //   "Content-Type": "multipart/form-data"
+    // },
+    body: formData,
   };
   await fetch("/api/resumes", options)
     .then(res => res.json())
@@ -36,11 +48,12 @@ handleSubmit = async () => {
       this.setState({ 
         title: "",
         level: "",
-        company: "" 
       })
     })
 }
-
+handleChangefile = (e) => {
+    this.setState({ [e.target.name]: e.target.files[0] });
+}
 handleEdit = async (id) => {
     try {
       let fetchResponse = await fetch("/api/resumes/update/"+id, {
@@ -71,10 +84,11 @@ handleDelete = async (id) => {
 
   render() {
     return(
-      <div>
-      <h3>Tell us more about your resume</h3>
+      <div> 
+      <h3 className='UpHeader'>Tell us more about your resume</h3>
       <Box className='Box' sx={{ maxWidth: 300 }}>
         <FormControl fullWidth>
+          <input type="file" name="file" onChange={this.handleChangefile}/>
           <InputLabel id="demo-simple-select-label">Job Title</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -108,7 +122,7 @@ handleDelete = async (id) => {
         </FormControl>
       </Box>
       <br/>
-      <button onClick={this.handleSubmit}>Upload</button>
+    <Button id='Button' variant="contained" onClick={this.handleSubmit}>Upload</Button>
       </div>
     )
   }

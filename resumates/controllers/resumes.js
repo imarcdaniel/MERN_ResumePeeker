@@ -6,14 +6,23 @@ module.exports = {
     show,
     update,
     delete: deleteOneResume,
+    showMine
 }
 
 async function create(req, res) {
+    console.log("create function hit")
+    console.log("log the body", req.body)
+    console.log("the user is", req.user)
+     console.log("the filname is", req.files.file.name)
   try {
+      
     await Resume.create({
-        title: req.body.title,
-        level: req.body.level,
-    })
+      title: req.body.title,
+      level: req.body.level,
+      user: req.user._id,
+      image:"https://resumatesbucket.s3.amazonaws.com/"+req.files.file.name,
+        
+    });
     res.status(200).json('Upload Resume Form to DB!')
  } catch(err) {
     res.json(err);
@@ -21,6 +30,16 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
+  try {
+    let resumes = await Resume.find()
+    res.status(200).json(resumes)      
+  } catch(err) {
+    res.status(400).json(err);
+  }
+}
+
+async function showMine(req, res) {
+console.log("hey user", req.user)
   try {
     let resumes = await Resume.find()
     res.status(200).json(resumes)      
@@ -48,9 +67,10 @@ async function update (req, res) {
 }
 
 async function deleteOneResume (req, res) {
-    let resume = await Resume.findOne({'resumes._id': req.params.id});
-    resume.id(req.params.id).remove();
-    resume.save(function(err){
-        return res.json(resume);
-    })
+  try {
+    let removeResume = await Resume.findByIdAndRemove(req.params.id)
+    res.status(200).json(removeResume)      
+  } catch(err) {
+    res.status(400).json(err);
+  }
 }

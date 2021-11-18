@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 require('dotenv').config()
 require('./config/database.js')
+const fileUpload = require("express-fileupload");
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(logger('dev'));
 
 app.use(express.json());
 
+app.use(fileUpload());
 app.use('/api/users', require('./routes/api/users'));
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder

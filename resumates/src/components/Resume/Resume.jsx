@@ -5,7 +5,9 @@ export default function Resume(props) {
     return(
         <div className="resume">
             <p>{props.resume.title}<Link to='/ShowPage' state={{ resume: props.resume }}>Show</Link></p>
+            <p>{props.resume.user}</p>
             <p>{props.resume.level}</p>
+            {/* <img src={props.resume.image}></img> */}
         </div>
     )
 }
