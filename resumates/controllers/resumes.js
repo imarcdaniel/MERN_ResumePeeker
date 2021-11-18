@@ -13,12 +13,16 @@ async function create(req, res) {
     console.log("create function hit")
     console.log("log the body", req.body)
     console.log("the user is", req.user)
+     console.log("the filname is", req.files.file.name)
   try {
+      
     await Resume.create({
-        title: req.body.title,
-        level: req.body.level,
-        user: req.user._id
-    })
+      title: req.body.title,
+      level: req.body.level,
+      user: req.user._id,
+      image:"https://resumatesbucket.s3.amazonaws.com/"+req.files.file.name,
+        
+    });
     res.status(200).json('Upload Resume Form to DB!')
  } catch(err) {
     res.json(err);

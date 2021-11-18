@@ -23,18 +23,23 @@ handleChange = (e) => {
 }
 
 handleSubmit = async () => {
+    const formData = new FormData();
+  formData.append("title", this.state.title);
+  formData.append("level", this.state.level);
+  formData.append("file", this.state.file);
+  formData.append("user", this.state.user);
+  
   let jwt = localStorage.getItem('token')
   let body = { 
     title: this.state.title, 
     level: this.state.level, 
   }
   let options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-       'Authorization': 'Bearer ' + jwt
-    },
-    body: JSON.stringify(body)
+   method: "POST",
+    // headers: {
+    //   "Content-Type": "multipart/form-data"
+    // },
+    body: formData,
   };
   await fetch("/api/resumes", options)
     .then(res => res.json())
@@ -46,7 +51,9 @@ handleSubmit = async () => {
       })
     })
 }
-
+handleChangefile = (e) => {
+    this.setState({ [e.target.name]: e.target.files[0] });
+}
 handleEdit = async (id) => {
     try {
       let fetchResponse = await fetch("/api/resumes/update/"+id, {
@@ -81,6 +88,7 @@ handleDelete = async (id) => {
       <h3 className='UpHeader'>Tell us more about your resume</h3>
       <Box className='Box' sx={{ maxWidth: 300 }}>
         <FormControl fullWidth>
+          <input type="file" name="file" onChange={this.handleChangefile}/>
           <InputLabel id="demo-simple-select-label">Job Title</InputLabel>
           <Select
             labelId="demo-simple-select-label"

@@ -16,35 +16,34 @@ class IndexPage extends React.Component {
   componentDidMount() {
     this.getResumes()
   }
+  
 
   render() {
+    let allResume = this.state.resumes;
+
     return (
         <main className="IndexPage">
-      <ImageList sx={{ width: 500, height: 450 }}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+      <ImageList className = 'allresumecontent' sx={{ width: 500, height: 450 }}>
+      {allResume.map((item) => (
+        <ImageListItem key={item.image}>
           <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            src={`${item.image}?w=40&fit=crop&auto=format`}
+            srcSet={`${item.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
+            id="resumesize"
+            className = 'Image'
           />
           <ImageListItemBar
             className = 'ImageTitle'
             title={item.title}
-            subtitle={<span>by: {item.author}</span>}
+            subtitle={<span>{item.user}</span>}
             position="below"
           />
         </ImageListItem>
       ))}
     </ImageList>
-        {this.state.resumes.length ? 
-        this.state.resumes.map(p => (
-        <Resume resume={p} getResumes={this.getResumes}/>
-          ))
-            :
-          <h1>No Resumes</h1>
-        }
+    
       </main>
     );
   }
@@ -52,22 +51,22 @@ class IndexPage extends React.Component {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    image: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
     title: 'Breakfast',
     author: '@bkristastucchio',
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    image: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
     title: 'Burger',
     author: '@rollelflex_graphy726',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    image: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
     title: 'Camera',
     author: '@helloimnik',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    image: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
     title: 'Coffee',
     author: '@nolanissac',
   },
