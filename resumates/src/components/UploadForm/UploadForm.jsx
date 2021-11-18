@@ -27,7 +27,6 @@ handleSubmit = async () => {
   let body = { 
     title: this.state.title, 
     level: this.state.level, 
-    company: this.state.company 
   }
   let options = {
     method: "POST",
@@ -44,7 +43,6 @@ handleSubmit = async () => {
       this.setState({ 
         title: "",
         level: "",
-        company: "" 
       })
     })
 }

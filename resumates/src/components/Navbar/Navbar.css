@@ -11,3 +11,11 @@
 #link {
     color: #3293ef;
 }
+
+#logo {
+   font-weight: bold; 
+   font-size: 18px;
+   background: -webkit-linear-gradient(#2b72e4, #3293ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

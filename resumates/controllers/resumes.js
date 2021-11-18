@@ -6,6 +6,7 @@ module.exports = {
     show,
     update,
     delete: deleteOneResume,
+    showMine
 }
 
 async function create(req, res) {
@@ -33,6 +34,16 @@ async function index(req, res) {
   }
 }
 
+async function showMine(req, res) {
+console.log("hey user", req.user)
+  try {
+    let resumes = await Resume.find()
+    res.status(200).json(resumes)      
+  } catch(err) {
+    res.status(400).json(err);
+  }
+}
+
 async function show (req, res) {
     let resume = await Resume.find({'resumes._id': req.params.id});
     return res.json(resume);
@@ -52,9 +63,10 @@ async function update (req, res) {
 }
 
 async function deleteOneResume (req, res) {
-    let resume = await Resume.findOne({'resumes._id': req.params.id});
-    resume.id(req.params.id).remove();
-    resume.save(function(err){
-        return res.json(resume);
-    })
+  try {
+    let removeResume = await Resume.findByIdAndRemove(req.params.id)
+    res.status(200).json(removeResume)      
+  } catch(err) {
+    res.status(400).json(err);
+  }
 }

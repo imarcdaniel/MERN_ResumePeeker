@@ -1,9 +1,8 @@
-* {
+/* * {
     box-sizing: border-box;
   }
     
   body {
-    font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     display: grid;
     justify-items: center;
@@ -18,7 +17,6 @@
  
   button {
     display: block;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     margin: 0.5rem 0 0 auto;
     padding: 0.4rem;
@@ -33,5 +31,23 @@
   button:hover {
     color: white;
     background-color: #737495;
-  }
+  } */
   
+.outlined-basic {
+  border: #3293ef;
+  color: #3293ef;
+}
+
+#ButtonOne, #ButtonTwo {
+    background-color: #1a73db;
+    border-radius: 20px;
+    width: 300px;
+    height: 37px;
+    text-transform: capitalize;
+    color: white;
+    margin: 10px;
+}
+
+#test {
+  color: white;
+}

@@ -52,3 +52,20 @@ img {
     text-transform: capitalize;
     margin: 40px 0px 50px 0px;
 }
+
+.LandingIcon {
+    color: #ffffff;
+    margin-bottom: -15px;
+}
+
+.one, .two, .three, .four {
+    padding-bottom: 30px;
+}
+
+#link {
+    color: white;
+}
+
+#login {
+    color: #1a73db; 
+}

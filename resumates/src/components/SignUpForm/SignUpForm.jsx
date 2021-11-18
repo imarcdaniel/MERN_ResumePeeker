@@ -1,5 +1,8 @@
 import { Component } from 'react';
 import './SignUpForm.css'
+import { TextField, Box, FormControl } from "@material-ui/core"; 
+import { Button } from "@material-ui/core"; 
+import { Link } from 'react-router-dom'
 
 export default class SignUpForm extends Component {
   state = {
@@ -55,27 +58,39 @@ export default class SignUpForm extends Component {
     const disable = this.state.password !== this.state.confirm;
     return (
       <div>
-        <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>
-              <input type="text" name="name" value={this.state.name} placeholder="Name" onChange={this.handleChange} required />
-            </label>
-            <label>
-              <input type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange} required />
-            </label>
-            <label>
-              <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required />
-            </label>
-            
-            <label>
-              <input type="password" name="confirm" value={this.state.confirm} placeholder="Confirm Password" onChange={this.handleChange} required />
-            </label>
-            <label>
-              <button type="submit" disabled={disable}>Create Account</button>
-            </label>
-          </form>
-        </div>
+    <Box component="form" sx={{'& > :not(style)': { m: 1, width: '25ch' },}} noValidate autoComplete="off"> </Box>
+      <Box className='Box' sx={{ maxWidth: 300 }}>
+        <FormControl fullWidth>
+          <TextField label="Name" variant="outlined" type="text" name="name" value={this.state.name} placeholder="Name" onChange={this.handleChange} required/>
+        </FormControl>
+      </Box>
+      <Box className='Box' sx={{ maxWidth: 300 }}>
+        <FormControl fullWidth>
+          <TextField label="Email" variant="outlined" type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange} required/>
+        </FormControl>
+      </Box>
+      <Box className='Box' sx={{ maxWidth: 300 }}>
+        <FormControl fullWidth>
+          <TextField label="Password" variant="outlined" type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required/>
+        </FormControl>
+      </Box>
+      <Box className='Box' sx={{ maxWidth: 300 }}>
+        <FormControl fullWidth>
+          <TextField label="Confirm Password" variant="outlined" type="password" name="confirm" value={this.state.confirm} placeholder="Confirm Password" onChange={this.handleChange} required/>
+        </FormControl>
+      </Box>
+      <br/>
+      <div>
+        <Button id='ButtonOne' variant="contained" onClick={this.handleSubmit}>
+          <Link id='link' className='link' to='/index'>Already have an account?</Link>
+        </Button>
+      </div>
+      <div>
+        <Button id='ButtonTwo' variant="contained" type="submit" disabled={disable} onClick={this.handleSubmit}>
+          <Link id='link' className='link' to='/index'>Create Account</Link>
+        </Button> 
         <p className="error-message">&nbsp;{this.state.error}</p>
+       </div>
       </div>
     );
   }
