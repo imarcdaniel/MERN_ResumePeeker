@@ -52,7 +52,7 @@ function Navbar(props) {
                 <MenuItem onClick={handleClose}><Link to='/Upload'>Upload</Link></MenuItem>
                 <MenuItem onClick={() => props.handleLogout()}><Link to='/LandingPage'>Logout</Link></MenuItem>
               </Menu>
-                <Link id='link' className='link' to='/index'>Resumates</Link>
+                <Link id='logo' className='link' to='/index'>Resumates</Link>
           </nav>
         </Toolbar>
     </AppBar>

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 // Add the Route named import
-import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate, Redirect, Switch } from 'react-router-dom';
 import AuthPage from './pages/AuthPage/AuthPage'
 import IndexPage from './pages/IndexPage/IndexPage';
 import Navbar from './components/Navbar/Navbar';
-import UploadForm from './components/UploadForm/UploadForm';
-import Resume from './components/Resume/Resume';
+import SignUpForm from './components/SignUpForm/SignUpForm';
+import LoginForm from './components/LoginForm/LoginForm';
 import UploadPage from './pages/UploadPage/UploadPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -52,13 +52,27 @@ class App extends Component {
         {/* if yes, they can see our pages: neworder, etc. */}
         {/* if no(user is null), show them only the <AuthPage> */}
         {this.state.user ? (
-          <Routes>
-            <Route path="/index" element={<IndexPage />} />
-            <Navigate to="/index" />
-            <Route path="/LandingPage" element={<LandingPage />} />
-            <Route path="/Upload" element={<UploadPage />} />
-            <Route path="/Profile" element={<ProfilePage />} />
-          </Routes>
+          <Switch>
+            <Route path="/signup" render={(props) => (
+            <SignUpForm {...props}/>
+            )} />
+            <Route path="/login" render={(props) => (
+            <LoginForm {...props}/>
+            )} />
+            <Route path="/index" render={(props) => (
+            <IndexPage {...props}/>
+            )} />
+            <Route path="/Upload" render={(props) => (
+            <UploadPage {...props}/>
+            )} />
+            <Route path="/Profile" render={(props) => (
+            <ProfilePage {...props} user={this.state.user}/>
+            )} />
+            <Route path="/LandingPage" render={(props) => (
+            <LandingPage {...props}/>
+            )} />
+            <Redirect to="/index" />
+          </Switch>
         ) : (
           <AuthPage setUserInState={this.setUserInState} />
         )}
