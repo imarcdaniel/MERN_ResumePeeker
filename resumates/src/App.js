@@ -10,6 +10,7 @@ import Resume from './components/Resume/Resume';
 import UploadPage from './pages/UploadPage/UploadPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import LandingPage from './pages/LandingPage/LandingPage';
+import ShowPage from './pages/ShowPage/ShowPage';
 import FileUpload from "./components/FileUpload/FileUpload";
 import { Link } from 'react-router-dom'
 
@@ -54,10 +55,11 @@ class App extends Component {
         {this.state.user ? (
           <Routes>
             <Route path="/index" element={<IndexPage />} />
-            <Navigate to="/index" />
             <Route path="/LandingPage" element={<LandingPage />} />
             <Route path="/Upload" element={<UploadPage />} />
             <Route path="/Profile" element={<ProfilePage />} />
+            <Route path="/ShowPage" element={<ShowPage user={this.state.user}/>} />
+            <Navigate to="/LandingPage" />
           </Routes>
         ) : (
           <AuthPage setUserInState={this.setUserInState} />

@@ -38,6 +38,7 @@ class IndexPage extends React.Component {
         </ImageListItem>
       ))}
     </ImageList>
+        {console.log(this.state.resumes)}
         {this.state.resumes.length ? 
         this.state.resumes.map(p => (
         <Resume resume={p} getResumes={this.getResumes}/>
