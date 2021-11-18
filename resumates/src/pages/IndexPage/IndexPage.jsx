@@ -2,7 +2,8 @@ import React from 'react'
 import './IndexPage.css'
 import UploadForm from '../../components/UploadForm/UploadForm';
 import Resume from '../../components/Resume/Resume';
-import { ImageList, ImageListItem, ImageListItemBar } from "@material-ui/core"; 
+import { ImageList, ImageListItem, ImageListItemBar } from "@material-ui/core";
+import { Link } from 'react-router-dom'
 
 class IndexPage extends React.Component {
   state = {
@@ -23,6 +24,7 @@ class IndexPage extends React.Component {
 
     return (
         <main className="IndexPage">
+      {this.state.resumes.length ? 
       <ImageList className = 'allresumecontent' sx={{ width: 500, height: 450 }}>
       {allResume.map((item) => (
         <ImageListItem key={item.image}>
@@ -36,14 +38,17 @@ class IndexPage extends React.Component {
           />
           <ImageListItemBar
             className = 'ImageTitle'
-            title={item.title}
+            <Link to='/ShowPage' state={{ resume: props.resume }}>title={item.title}</Link>
+            level={item.level}
             subtitle={<span>{item.user}</span>}
             position="below"
           />
         </ImageListItem>
       ))}
     </ImageList>
-    
+            :
+          <h1>No Resumes</h1>
+        }
       </main>
     );
   }

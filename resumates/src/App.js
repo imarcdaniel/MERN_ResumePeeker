@@ -10,6 +10,7 @@ import LoginForm from './components/LoginForm/LoginForm';
 import UploadPage from './pages/UploadPage/UploadPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import LandingPage from './pages/LandingPage/LandingPage';
+import ShowPage from './pages/ShowPage/ShowPage';
 import FileUpload from "./components/FileUpload/FileUpload";
 import { Link } from 'react-router-dom'
 
@@ -71,6 +72,7 @@ class App extends Component {
             <Route path="/LandingPage" render={(props) => (
             <LandingPage {...props}/>
             )} />
+            <Route path="/ShowPage" render={(props) => (<ShowPage user={this.state.user}/>)} />
             <Redirect to="/index" />
           </Switch>
         ) : (
