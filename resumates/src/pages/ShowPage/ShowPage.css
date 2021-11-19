@@ -8,7 +8,7 @@
 
 .ShowHeader {
     padding-top: 120px;
-    color: white;
+    color: rgb(14, 13, 13);
     font-size: 24px;
     margin-bottom: -10px;
 }
@@ -36,13 +36,13 @@
 }
 
 .CommentsTitle {
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: left;
     padding-left: 30px;
 }
 
 .CommentsSub {
-    color: #d4dad2;
+    color: #070707;
     text-align: left;
     padding-left: 30px;
     font-size: 12px;
@@ -50,7 +50,7 @@
 }
 
 #CommentInput {
-    color: white;
+    color: rgb(10, 10, 10);
     font-size: 12px;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .CommentText {
-    color: white;
+    color: rgb(8, 8, 8);
     text-align: left;
     padding-left: 30px;
     font-weight: normal;

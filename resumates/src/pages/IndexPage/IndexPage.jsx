@@ -4,13 +4,13 @@ import UploadForm from '../../components/UploadForm/UploadForm';
 import Resume from '../../components/Resume/Resume';
 import { ImageList, ImageListItem, ImageListItemBar, Box, Paper, Grid } from "@material-ui/core";
 import { Link } from 'react-router-dom'
-import { Button, InputLabel, MenuItem, FormControl, Select, Box } from "@material-ui/core"; 
+import { Button, InputLabel, MenuItem, FormControl, Select} from "@material-ui/core"; 
 
 class IndexPage extends React.Component {
 
   state = {
       resumes: [],
-      close: true
+      close: false
   }
   
   getResumes = async () => {
@@ -49,9 +49,9 @@ onChangeHandler(e) {
       const close = this.state.close;
     return (
         <main className="IndexPage">
-          <Button onClick={() => this.yourFunction()}id='Button' variant="contained" >toggle</Button>
+          <Button style={{color: "white", maxWidth: '60px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}} onClick={() => this.yourFunction()}id='Button' variant="contained" >Filter</Button>
     { close ? (
-      <div > 
+      <div className="Intro" > 
         <Box className='Box' sx={{ maxWidth: 300 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Job Title</InputLabel>
@@ -87,8 +87,8 @@ onChangeHandler(e) {
         </FormControl>
       </Box>
       <br/>
-    <Button id='Button' variant="contained" onClick={this.getResumes}>Reset</Button>
-    <Button id='Button' variant="contained"  onClick={()=>{this.onChangeHandler()}}>Apply</Button> 
+    <Button style={{color: "white", maxWidth: '50px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}} id='Button' variant="contained" onClick={this.getResumes}>Reset</Button>
+    <Button style={{color: "white", maxWidth: '50px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}} id='Button' variant="contained"  onClick={()=>{this.onChangeHandler()}}>Apply</Button> 
     </div>
     )
       : 
@@ -98,7 +98,8 @@ onChangeHandler(e) {
       
     )
 
-    })
+    }
+    <div className="resumes">
       {this.state.resumes.length ? 
         this.state.resumes.map(p => 
           (<Resume resume={p} getResumes={this.getResumes}/>
@@ -106,7 +107,7 @@ onChangeHandler(e) {
             :
           <h1>No Resumes</h1>
         }
-     
+     </div>
       </main>
     );
   }

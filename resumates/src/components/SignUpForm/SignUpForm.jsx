@@ -80,11 +80,7 @@ export default class SignUpForm extends Component {
         </FormControl>
       </Box>
       <br/>
-      <div>
-        <Button id='ButtonOne' variant="contained" onClick={this.handleSubmit}>
-          <Link id='link' className='link' to='/index'>Already have an account?</Link>
-        </Button>
-      </div>
+
       <div>
         <Button id='ButtonTwo' variant="contained" type="submit" disabled={disable} onClick={this.handleSubmit}>
           <Link id='link' className='link' to='/index'>Create Account</Link>

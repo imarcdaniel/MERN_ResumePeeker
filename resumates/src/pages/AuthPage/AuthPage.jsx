@@ -3,6 +3,7 @@ import './AuthPage.css';
 // import Logo from '../../components/Logo/Logo';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
+import { Button } from "@material-ui/core"; 
 
 
 export default class AuthPage extends React.Component {
@@ -19,9 +20,9 @@ export default class AuthPage extends React.Component {
         <LoginForm setUserInState={this.props.setUserInState}/> : 
         <SignUpForm setUserInState={this.props.setUserInState} />}
         <div>
-          <button onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
+          <Button id="invisible" onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
             {this.state.showLogin ? 'Sign Up' : 'Already have and account?'}
-          </button>
+          </Button>
         </div>
       </main>
     );
