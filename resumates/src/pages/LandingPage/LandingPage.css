@@ -1,5 +1,5 @@
 body {
-    background-color: #031e3c;
+    background-color: #fcfcfc;
 }
 .Intro {
     padding-top: 100px;
@@ -17,7 +17,7 @@ body {
     font-size: 36px;
     font-weight: bolder;
     line-height: 42px;
-    color:#ffffff;
+    color:#1a1717;
 }
 
 span {
@@ -27,7 +27,7 @@ span {
 .Header2 {
     font-size: 24px;
     padding: 60px 0px 0px 0px;
-    color:#ffffff;
+    color:#110e0e;
 }
 
 .Header3 {
@@ -36,7 +36,7 @@ span {
 
 .p {
     font-size: 12px;
-    color: #d4dad2;
+    color: #090a09;
     padding: 0px 50px 0px 50px;
 }
 
@@ -54,7 +54,7 @@ img {
 }
 
 .LandingIcon {
-    color: #ffffff;
+    color: #1a73db;
     margin-bottom: -15px;
 }
 

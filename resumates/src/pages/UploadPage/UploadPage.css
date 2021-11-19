@@ -20,7 +20,7 @@ p {
     font-weight: normal;
     font-size: 12px;
     line-height: 12px;
-    color: #d4dad2;
+    color: #060606;
 }
 
 h3 {
@@ -32,19 +32,19 @@ h3 {
 }
 
 .UpHeader {
-    color: white;
+    color: rgb(7, 7, 7);
     padding-top: 30px;
 }
 
 #updateinput {
-    color: white;
+    color: rgb(20, 19, 19);
 }
 
 #demo-simple-select-label {
-    color: white;
+    color: rgb(7, 6, 6);
 
 }
 
 #demo-simple-select {
-    color: white;
+    color: rgb(5, 5, 5);
 }

@@ -1,12 +1,16 @@
 .IndexImg {
- width: 500px;
- height: 700px;
+  width: 60x;
+  height: 60px;
+}
+.resume {
+    width: 60px;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .IndexLevel {
-
 }
 
 .IndexTitle {
-
 }

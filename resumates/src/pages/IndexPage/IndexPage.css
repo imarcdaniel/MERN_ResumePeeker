@@ -15,15 +15,73 @@
 .IndexLevel {
  font-size: 12px;
  margin-top: -5px;
+ color:black;
 }
 
 #IndexTitle:hover {
     font-size: 13px;
-    color: white;
+    color: rgb(23, 23, 240);
     text-decoration: underline;
 }
 
 #IndexTitle{
     font-size: 13px;
-    color: white;
+    color: rgb(21, 19, 19);
+}
+
+.resumes {
+    width: auto;
+  height: 50px;
+  display: inline-flex;
+  flex-wrap: row;
+}
+.Intro {
+    padding-top: 100px;
+}
+
+.Box {
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #0049A9;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: #070707;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #0049A9;
+}
+
+.UpHeader {
+    color: rgb(14, 13, 13);
+    padding-top: 30px;
+}
+
+#updateinput {
+    color: rgb(20, 20, 20);
+}
+
+#demo-simple-select-label {
+    color: rgb(12, 11, 11);
+
+}
+
+#demo-simple-select {
+    color: rgb(19, 18, 18);
 }
