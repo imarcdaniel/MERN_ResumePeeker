@@ -36,9 +36,9 @@ handleSubmit = async () => {
   }
   let options = {
    method: "POST",
-    // headers: {
-    //   "Content-Type": "multipart/form-data"
-    // },
+    headers: {
+      'Authorization': 'Bearer ' + jwt
+    },
     body: formData,
   };
   await fetch("/api/resumes", options)

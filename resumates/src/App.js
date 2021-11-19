@@ -72,7 +72,7 @@ class App extends Component {
             <Route path="/LandingPage" render={(props) => (
             <LandingPage {...props}/>
             )} />
-            <Route path="/ShowPage" render={(props) => (<ShowPage user={this.state.user}/>)} />
+            <Route path="/ShowPage" render={(props) => (<ShowPage {...props} user={this.state.user}/>)} />
             <Redirect to="/index" />
           </Switch>
         ) : (
