@@ -16,9 +16,9 @@ async function create(req, res) {
      console.log("the filname is", req.files.file.name)
   try {
     await Resume.create({
+      user: req.user._id,
       title: req.body.title,
       level: req.body.level,
-      user: req.user._id,
       image:"https://resumatesbucket.s3.amazonaws.com/"+req.files.file.name,
         
     });

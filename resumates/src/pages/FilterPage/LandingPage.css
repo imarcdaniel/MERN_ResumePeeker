@@ -1,0 +1,71 @@
+body {
+    background-color: #031e3c;
+}
+.Intro {
+    padding-top: 100px;
+}
+
+#Button {
+    background-color: #1a73db;
+    border-radius: 20px;
+    width: 300px;
+    height: 37px;
+    text-transform: capitalize;
+}
+
+.Header {
+    font-size: 36px;
+    font-weight: bolder;
+    line-height: 42px;
+    color:#ffffff;
+}
+
+span {
+    color: #3293ef;
+}
+
+.Header2 {
+    font-size: 24px;
+    padding: 60px 0px 0px 0px;
+    color:#ffffff;
+}
+
+.Header3 {
+    font-size: 18px;
+    color: #3293ef; }
+
+.p {
+    font-size: 12px;
+    color: #d4dad2;
+    padding: 0px 50px 0px 50px;
+}
+
+img {
+    padding: 30px 0px 0px 0px;
+}
+
+#LastButton {
+    background-color: #1a73db;
+    border-radius: 20px;
+    width: 300px;
+    height: 37px;
+    text-transform: capitalize;
+    margin: 40px 0px 50px 0px;
+}
+
+.LandingIcon {
+    color: #ffffff;
+    margin-bottom: -15px;
+}
+
+.one, .two, .three, .four {
+    padding-bottom: 30px;
+}
+
+#link {
+    color: white;
+}
+
+#login {
+    color: #1a73db; 
+}
