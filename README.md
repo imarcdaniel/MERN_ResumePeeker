@@ -27,9 +27,10 @@ A database of resume samples from working professionals.
 
 ### Getting Started 
 
-[<img src="https://www.pngfind.com/pngs/m/201-2017441_review-with-video-icon-start-icon-blue-png.png" width="90"/>](https://github.com/user/repository/subscription)
+[<img src="https://www.pngfind.com/pngs/m/201-2017441_review-with-video-icon-start-icon-blue-png.png" width="90"/>](https://resumatees.herokuapp.com)
 
 ### Next Steps
 
 ### Planning Materials
+
 <a href="https://imgur.com/UHlN1kn"><img src="https://i.imgur.com/UHlN1kn.jpg" title="source: imgur.com" /></a>

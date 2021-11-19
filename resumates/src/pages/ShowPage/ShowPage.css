@@ -5,3 +5,63 @@
 .ImageTitle {
     color: black;
 }
+
+.ShowHeader {
+    padding-top: 120px;
+    color: white;
+    font-size: 24px;
+    margin-bottom: -10px;
+}
+
+.ShowLevel {
+    font-size: 14px;
+    color: #2b72e4;
+    margin-bottom: -15px;
+}
+
+.ShowDate {
+    font-size: 12px;
+    color: #2b72e4;
+}
+
+.Showimg {
+    max-width: 435px;
+    max-height: 551px;
+    width: 100%;
+}
+
+.TopSection {
+    padding-bottom: 30px;
+    border-bottom: 0.01em solid #132f4c;
+}
+
+.CommentsTitle {
+    color: white;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.CommentsSub {
+    color: #d4dad2;
+    text-align: left;
+    padding-left: 30px;
+    font-size: 12px;
+    margin-top: -10px
+}
+
+#CommentInput {
+    color: white;
+    font-size: 12px;
+}
+
+.CommentSection {
+    padding-bottom: 30px;
+    border-bottom: 0.01em solid #132f4c; 
+}
+
+.CommentText {
+    color: white;
+    text-align: left;
+    padding-left: 30px;
+    font-weight: normal;
+}

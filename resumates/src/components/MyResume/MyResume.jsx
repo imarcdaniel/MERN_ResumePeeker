@@ -4,12 +4,11 @@ import EditIcon from "@material-ui/icons/Edit";
 export default function Resume(props) {
     return(
         <div className="resume">
-            <p>{props.resume.title}</p>
-            <p>{props.resume.user}</p>
-            <p>{props.resume.level}</p>
-            {/* <img src={props.resume.image}></img> */}
+            <img className="ResumeImg" src={props.resume.image}></img>
+            <p className="ResumeTitle">{props.resume.title}</p>
+            <p className="ResumeLevel">{props.resume.level}</p>
             <EditIcon onClick={() => props.handleUpdate(props.resume._id)} id="Logo"/>
             <DeleteIcon onClick={() => props.handleDelete(props.resume._id)} id="Logo" />
-        </div>
+            </div>
     )
 }

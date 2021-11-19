@@ -2,11 +2,11 @@ import React from 'react'
 import './IndexPage.css'
 import UploadForm from '../../components/UploadForm/UploadForm';
 import Resume from '../../components/Resume/Resume';
+import { ImageList, ImageListItem, ImageListItemBar, Box, Paper, Grid } from "@material-ui/core";
 import { Link } from 'react-router-dom'
 import { Button, InputLabel, MenuItem, FormControl, Select, Box } from "@material-ui/core"; 
 
 class IndexPage extends React.Component {
-   
 
   state = {
       resumes: [],
@@ -46,7 +46,7 @@ onChangeHandler(e) {
         });
     };
   render() {
-    const close = this.state.close;
+      const close = this.state.close;
     return (
         <main className="IndexPage">
           <Button onClick={() => this.yourFunction()}id='Button' variant="contained" >toggle</Button>
@@ -97,6 +97,7 @@ onChangeHandler(e) {
       </div> 
       
     )
+
     })
       {this.state.resumes.length ? 
         this.state.resumes.map(p => 
@@ -114,24 +115,4 @@ onChangeHandler(e) {
 
 
 export default IndexPage; 
-{/* <ImageList className = 'allresumecontent' sx={{ width: 500, height: 450 }}> */}
-      {/* {allResume.map((item) => (
-        <ImageListItem key={item.image}>
-          <img
-            src={`${item.image}?w=40&fit=crop&auto=format`}
-            srcSet={`${item.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-            id="resumesize"
-            className = 'Image'
-          />
-          <ImageListItemBar
-            className = 'ImageTitle'
-            
-            level={item.level}
-            subtitle={<span>{item.user}</span>}
-            position="below"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList> */}
+
