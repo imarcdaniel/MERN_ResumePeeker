@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { InputLabel, MenuItem, FormControl, Select, Box } from "@material-ui/core"; 
-import { Button } from "@material-ui/core"; 
+import { Button, Fab } from "@material-ui/core"; 
+import { Link } from 'react-router-dom'
+import AddIcon from "@material-ui/icons/Add";
 
 export default class UploadForm extends Component {
   state = {
@@ -86,9 +88,13 @@ handleDelete = async (id) => {
     return(
       <div> 
       <h3 className='UpHeader'>Tell us more about your resume</h3>
+     <label htmlFor="upload-photo" >
+        <input id="updateinput" type="file" type="file" name="file" onChange={this.handleChangefile} />
+        <br />
+        <br />
+      </label>
       <Box className='Box' sx={{ maxWidth: 300 }}>
         <FormControl fullWidth>
-          <input type="file" name="file" onChange={this.handleChangefile}/>
           <InputLabel id="demo-simple-select-label">Job Title</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -98,9 +104,11 @@ handleDelete = async (id) => {
             onChange={this.handleChange}
             name="title"
             >
-            <MenuItem value={"Engineer"}>Software Engineer</MenuItem>
-            <MenuItem value={"Magician"}>Magician</MenuItem>
-            <MenuItem value={"Accountant"}>Accountant</MenuItem>
+            <MenuItem value={"Software Engineer"}>Software Engineer</MenuItem>
+            <MenuItem value={"Data Scientist"}>Data Scientist</MenuItem>
+            <MenuItem value={"Web Developer"}>Web Developer</MenuItem>
+            <MenuItem value={"Techincal Recruiter"}>Techincal Recruiter</MenuItem>
+            <MenuItem value={"IT Support Technician"}>IT Support Technician</MenuItem>
           </Select>
         </FormControl>
       </Box>
@@ -122,7 +130,9 @@ handleDelete = async (id) => {
         </FormControl>
       </Box>
       <br/>
-    <Button id='Button' variant="contained" onClick={this.handleSubmit}>Upload</Button>
+    <Button id='Button' variant="contained" onClick={this.handleSubmit}>
+      <Link id='link' className='link' to='/Profile'>Upload</Link>
+    </Button>
       </div>
     )
   }

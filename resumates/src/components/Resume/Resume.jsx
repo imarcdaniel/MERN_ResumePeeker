@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 export default function Resume(props) {
     return(
         <div className="resume">
-            <p>{props.resume.title}<Link to={{ pathname: '/ShowPage', state: { resume: props.resume } }}>Show</Link></p>
-            <p>{props.resume.user}</p>
-            <p>{props.resume.level}</p>
-            <img src={props.resume.image}></img>
+            <img className="IndexImg" src={props.resume.image}></img>
+            <p><Link id="IndexTitle"to={{ pathname: '/ShowPage', state: { resume: props.resume } }}>{props.resume.title} </Link></p>
+            <p className="IndexLevel">{props.resume.level}</p>
         </div>
     )
 }

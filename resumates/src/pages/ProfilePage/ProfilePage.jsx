@@ -72,6 +72,13 @@ handleDelete = async (id) => {
               <div className='row'>
                 <div className='column'>
                     <h1 className='ProfHeader'>My Resumes</h1>
+                </div>
+                <div className='column'>
+                    <Link id='ProfLink' to='/Upload'>+ Upload Resume</Link>
+                </div>
+              </div>
+            </div>
+        </div>
                         {this.state.resumes.length ? 
                           this.state.resumes.map(p => {
                             if (this.props.user._id == p.user) { 
@@ -80,17 +87,6 @@ handleDelete = async (id) => {
                               :
                             <h1>No Resumes</h1> 
                         }
-                </div>
-                <div className='column'>
-                    <Link id='ProfLink' to='/Upload'>+ Upload Resume</Link>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div className = "BookM">
-          <h1 className='ProfHeader'>Bookmarked</h1>
-        </div>
       </main>
     );
   }

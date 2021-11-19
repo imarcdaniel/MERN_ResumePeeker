@@ -6,4 +6,24 @@
     color: black;
 }
 
+.IndexImg {
+ max-width: 500px;
+ max-height: 700px;
+ width: 100%;
+}
 
+.IndexLevel {
+ font-size: 12px;
+ margin-top: -5px;
+}
+
+#IndexTitle:hover {
+    font-size: 13px;
+    color: white;
+    text-decoration: underline;
+}
+
+#IndexTitle{
+    font-size: 13px;
+    color: white;
+}
