@@ -15,7 +15,6 @@ async function create(req, res) {
     console.log("the user is", req.user)
      console.log("the filname is", req.files.file.name)
   try {
-      
     await Resume.create({
       title: req.body.title,
       level: req.body.level,

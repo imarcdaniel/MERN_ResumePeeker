@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { Input, MenuItem, FormControl, Select, Box } from "@material-ui/core";
-
+import { Button } from "@material-ui/core"; 
 
 const CommentForm = () => {
     const [ commentsData, setCommentsData] = useState({})
@@ -31,11 +31,13 @@ const CommentForm = () => {
             .catch(error => {console.error("Error:", error)})
       }
       return(
-        <div>
-        <h3>Comment Form</h3>
+        <div className="CommentSection" >
+        <h3 className="CommentsTitle">Comments</h3>
+        <h3 className="CommentsSub">Add a public comment</h3>
         <Box className='Box' sx={{ maxWidth: 300 }}>
-          <FormControl fullWidth>
+          <FormControl id='CommentInput' fullWidth>
             <Input
+              id='CommentInput' 
                 multiline= { true }
                 rows = { 4 }
                 onChange={handleChange}
@@ -43,7 +45,7 @@ const CommentForm = () => {
           </FormControl>
         </Box>
         <br/>
-        <button onClick={handleSubmit}>Submit</button>
+        <Button id='Button' variant="contained" onClick={handleSubmit}>Submit</Button>
         </div>
       )
     // return (

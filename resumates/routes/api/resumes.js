@@ -9,6 +9,12 @@ const AWS = require("aws-sdk");
 
 const { uploadFile } = require("../../controllers/s3");
 
+router.get('/mine', resumesCtrl.showMine);
+router.get('/', resumesCtrl.index)
+router.get('/:id', resumesCtrl.show);
+router.delete('/delete/:id', resumesCtrl.delete);
+router.put('/update/:id', resumesCtrl.update);
+
 const fs = require("fs");
 const s3 = new AWS.S3({
   /* ... */
@@ -88,10 +94,6 @@ router.post("/", async (req, res) => {
 
 //   next();
 // };
-// GET all posts
-router.get("/", resumesCtrl.index);
-router.get("/:id", resumesCtrl.show);
-router.delete("/:id", resumesCtrl.delete);
-router.put("/:id", resumesCtrl.update);
+
 
 module.exports = router;

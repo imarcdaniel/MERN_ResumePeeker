@@ -12,17 +12,18 @@ const ShowPage = (props) => {
     console.log(resume)
 
     let todaysDate = (new Date()).toLocaleDateString()
-
     return (
         <>
-            <h1>Show Page</h1>
-            <h1>{title}</h1>
-            <h3>{level}</h3>
-            <img src={ image }></img> 
-            <h3>{todaysDate}</h3>
+        <div className="TopSection">
+            <h1 className="ShowHeader">{title}</h1>
+            <h3 className="ShowLevel">{level}</h3>
+            <h3 className="ShowDate">Uploaded on {todaysDate}</h3>
+            <img className="Showimg" src={ image }></img> 
+        </div>
             <CommentSection user={props.user} />
         </> 
       );  
 }
 
 export default ShowPage;
+

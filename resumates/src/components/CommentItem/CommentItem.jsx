@@ -9,7 +9,7 @@ const CommentItem = (props) => {
 
     return(
         <>
-            <h6>{props.user.name}-{ text }</h6>
+            <h6 className="CommentText">{props.user.name}-{ text }</h6>
         </>
     )
 }
